@@ -1,1 +1,1 @@
-npm -v
+npm --version
