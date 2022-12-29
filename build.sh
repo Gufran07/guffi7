@@ -1,0 +1,2 @@
+echo "guffi"
+npm --version
