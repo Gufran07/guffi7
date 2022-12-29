@@ -1,1 +1,1 @@
-npm --version
+npm --install --dry-run
