@@ -1,1 +1,1 @@
-echo gufran
+npm -v
