@@ -21,11 +21,15 @@
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
+        <properties>
+             <maven.compiler.source>1.7/maven.compiler.source>
+             <maven.compiler.target>1.7/maven.compiler.target>
+        </properties>
 
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
-            <version>6.4</version>
+            <version>y7.1</version>
         </dependency>
     </dependencies>
 
