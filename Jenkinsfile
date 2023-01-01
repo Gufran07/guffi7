@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
 
-library identifier: 'jenkins-shared-library@master', retriever: modernSCM(
+library identifier: 'jenkins-shared-lib@master', retriever: modernSCM(
         [$class: 'GitSCMSource',
-         remote: 'https://gitlab.com/nanuchi/jenkins-shared-library.git',
-         credentialsId: 'gitlab-credentials'
+         remote: 'https://github.com/Gufran07/guffi7.git',
+         credentialsId: '7375654c-8817-4760-9e6c-ef8e9768570e'
         ]
 )
 
@@ -33,9 +33,9 @@ pipeline {
         stage("build and push image") {
             steps {
                 script {
-                    buildImage 'nanajanashia/demo-app:jma-3.0'
+                    buildImage 'guffi/guffi-docker:jma-3.0'
                     dockerLogin()
-                    dockerPush 'nanajanashia/demo-app:jma-3.0'
+                    dockerPush 'guffi/guffi-docker:jma-3.0'
                 }
             }
         }
