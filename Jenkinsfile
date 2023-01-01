@@ -12,7 +12,7 @@ pipeline {
         stage("init") {
             steps {
                 script {
-                    gv = load "jenkins-shared-lib/script.groovy"
+                    gv = load "script.groovy"
                 }
             }
         }
