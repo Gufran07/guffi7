@@ -7,7 +7,12 @@
     <groupId>com.example</groupId>
     <artifactId>java-maven-app</artifactId>
     <version>1.0-SNAPSHOT</version>                    
-         
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -21,15 +26,11 @@
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
-        <properties>
-             <maven.compiler.source>1.7</maven.compiler.source>
-             <maven.compiler.target>1.7</maven.compiler.target>
-        </properties>
-
+       
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
-            <version>y7.1</version>
+            <version>y6.4</version>
         </dependency>
     </dependencies>
 
