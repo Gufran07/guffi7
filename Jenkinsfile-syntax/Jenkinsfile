@@ -4,7 +4,7 @@ def gv
 
 pipeline {
     agent any
-    tool {
+    tools {
         maven 'Maven 3.8.6'
     }
     parameters {
