@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     echo "Building the application..."
-                    echo "Testing the committ..."
+                    echo "Testing the build..."
                 }
             }
         }
