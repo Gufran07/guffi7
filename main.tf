@@ -12,6 +12,7 @@ variable "my_ip" {}
 variable "instance-type" {}
 variable "key-name" {}
 variable "pub-key-location" {}
+variable "priv-key-location" {}
 
 # VPC Details
 resource "aws_vpc" "myapp-vpc" { 
@@ -134,9 +135,25 @@ resource "aws_instance" "myapp-ec2" {
     availability_zone = var.avail_zone
     associate_public_ip_address = true
     key_name = aws_key_pair.ssh-key.key_name
-    user_data = file("entry-pt.sh")
+    # user_data = file("entry-pt.sh")
     tags = {
         Name = "${var.env_prefix}-EC2"
+    }
+    connection {
+        type = "ssh"
+        host = aws_instance.myapp-ec2.public_ip
+        user = "ec2-user"
+        private_key = file(var.priv-key-location)
+    }
+    provisioner "file" {
+        source = "entry-pt.sh"
+        destination = "/home/ec2-user/entry-pt.sh"
+    }
+    provisioner "remote-exec" {
+        script = file("entry-pt.sh")
+    }
+    provisioner "local-exec"{
+        command = "echo ${self.public_ip} > EC2-IP.txt"
     }
 }
 output "ec2_public_ip" {
