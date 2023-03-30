@@ -1,0 +1,9 @@
+variable "vpc_id" {}
+variable "my_ip" {}
+variable "key_name" {}
+variable "IGW-cidr-block" {}
+variable "env_prefix" {}
+variable "instance-type" {}
+variable "subnet_id" {}
+variable "avail_zone" {}
+variable "pub-keylocation" {}
